@@ -11,5 +11,15 @@
       ],
       "gitRef": "master"
     }
+  ],
+  "notificationChannels": [
+    {
+      "name": "new_notification_channel",
+      "email": {
+        "to": [
+          "sinanek@google.com"
+        ]
+      }
+    }
   ]
 }
