@@ -1,0 +1,22 @@
+config {
+  type: 'table',
+  dependencies: ['model_evaluate'],
+  tags: ["predict"],
+  schema: "staging"
+
+}
+
+SELECT
+  *
+FROM
+  ML.PREDICT (
+    MODEL ${ref('model_train')},
+    (
+      SELECT
+        *
+      FROM
+        ${ref('census_input')}
+      WHERE
+        dataframe = 'prediction'
+    )
+  )
